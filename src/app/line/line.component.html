@@ -1,0 +1,10 @@
+<div>
+  <a
+    [routerLink]="['/tasks', task.id]"
+    dirtyWords
+    [dirty]="verifyDirtyWords()"
+    >{{ task.name }}</a
+  >
+  <button (click)="remove()">Remover tarefa</button>
+  <button (click)="edit()">Editar tarefa</button>
+</div>

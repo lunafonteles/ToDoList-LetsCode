@@ -1,0 +1,18 @@
+<div>
+  <span>Nova Tarefa</span>
+  <input type="text" #todoListInput />
+  <button (click)="add(todoListInput)">Adicionar</button>
+  <br />
+  <br />
+  <span>Pesquisar Tarefa</span>
+  <input
+    type="text"
+    [ngModel]="filter"
+    (ngModelChange)="onFilterChange($event)"
+  />
+
+  <li *ngFor="let tarefa of tasks">
+    <app-line [task]="tarefa" (taskRemoved)="tratarRemocao($event)"></app-line>
+  </li>
+  <br />
+</div>
